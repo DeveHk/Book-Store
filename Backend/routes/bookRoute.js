@@ -1,4 +1,5 @@
 import express from "express";
+import { ObjectId } from "mongodb";
 import Book from "../models/bookModels.js";
 const router = express.Router();
 router.post("/", async (req, res) => {
@@ -37,8 +38,6 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     console.log(req.body);
-    if (!req.body.title || !req.body.auther || !req.body.publishYear)
-      return res.status(400).send({ message: "[Some Data Missing]" });
     const { id } = req.params; //put takes data form params also
     const bookRes = await Book.findByIdAndDelete(id);
     if (!bookRes) return res.status(404).json({ message: "No Book Exists" });

@@ -9,27 +9,11 @@ import Home from "./pages/Home";
 function App() {
   return (
     <Routes>
-      <Route className="/" path="" element={<Home />}></Route>
-      <Route
-        className="/books/create"
-        path=""
-        element={<CreateBooks />}
-      ></Route>
-      <Route
-        className="/books/details/:id"
-        path=""
-        element={<ShowBooks />}
-      ></Route>
-      <Route
-        className="/books/edit/:id"
-        path=""
-        element={<EditBooks />}
-      ></Route>
-      <Route
-        className="/books/delete/:id"
-        path=""
-        element={<DeleteBooks />}
-      ></Route>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/books/create" element={<CreateBooks />}></Route>
+      <Route path="/books/details/:id" element={<ShowBooks />}></Route>
+      <Route path="/books/edit/:id" element={<EditBooks />}></Route>
+      <Route path="/books/delete/:id" element={<DeleteBooks />}></Route>
     </Routes>
   );
 }
